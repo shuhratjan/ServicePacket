@@ -11,7 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using ServicePacket.Data;
 using ServicePacket.Models;
 using ServicePacket.Services;
-
+using ServicePacket.Data.Interface;
+using ServicePacket.Data.Repository;
 namespace ServicePacket
 {
     public class Startup
@@ -35,7 +36,8 @@ namespace ServicePacket
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
-
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IServiceRepository, ServiceRepository>();
             services.AddMvc();
         }
 

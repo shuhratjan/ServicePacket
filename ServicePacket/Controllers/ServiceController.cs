@@ -1,16 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using ServicePacket.Data.Interface;
 
 namespace ServicePacket.Controllers
 {
     public class ServiceController : Controller
     {
+        
+        protected readonly ICategoryRepository _categoryRepository;
+
+        public ServiceController(ICategoryRepository categoryRepository)
+        {
+            _categoryRepository = categoryRepository;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            var model = _categoryRepository.GetAllWithServices();
+            
+            return View(model);
         }
     }
 }

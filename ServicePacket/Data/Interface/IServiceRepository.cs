@@ -8,7 +8,7 @@ namespace ServicePacket.Data.Interface
 {
     public interface IServiceRepository: IRepository<Service>
     {
-        IEnumerable<Service> GetAllWithCategory();
+        IEnumerable<Service> GetAllServices();
         IEnumerable<Service> FindWithCategory(Func<Service, bool> predicate);
     }
 }

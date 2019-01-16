@@ -33,3 +33,28 @@
         display: none;
     }
 }
+
+.mainContent {
+    width: auto;
+    margin: 12px 20px;
+    /*border: 1px solid gray;
+    box-shadow: 1px 2px 9px #888888;*/
+}
+.serviceBox {
+    width: 145px;
+    margin: 2px;
+    text-align: center;
+    border: 1px solid gray;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.mainBlock {
+    margin: 6px;
+    border: 1px solid gray;
+    box-shadow: 1px 2px 9px #888888;
+}
+
+.receiptBlock {
+    width: 31.5%;
+    float: right;
+}

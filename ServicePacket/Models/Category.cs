@@ -12,13 +12,12 @@ namespace ServicePacket.Models
         [Required]
         [StringLength(500, MinimumLength = 3)]
         public string Name { get; set; }
-        public Nullable<long> ParentID { get; set; }
         public virtual Category Parent{ get; set;}
+        public Nullable<long> ParentID { get; set; }
 
-        public int Code { get; set; }
+        public string Code { get; set; }
 
         public virtual ICollection<Service> Services { get; set; }
-
         
     }
 }

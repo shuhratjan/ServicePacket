@@ -1,8 +1,25 @@
-﻿@model ServiceVM
+﻿@model IEnumerable<Category>
 @{
+    Layout = "~/Views/Service/ServiceLayout.cshtml";
     ViewData["Title"] = "Тарифы услуг";
-}
 
-<h2>Индивидуальный Пакет</h2>
-<h5>Cоберите свой пакет услуг</h5>
+}
+<div class="container mainContent">
+    <div class="row">
+        <div class="col-md-8 mainBlock">
+            <h2>Индивидуальный Пакет</h2>
+            <h5>Cоберите свой пакет услуг</h5>
+            <div class="container">
+                
+            </div>
+        </div>
+        <div class="col-md-4 mainBlock receiptBlock">
+            <h1>ВАШ ПАКЕТ</h1>
+            <div class="col-md-2 serviceBox">Lorem ipsum Lorem ipsum Lorem ipsum</div>
+        </div>
+
+    </div>
+</div>
+
+
 

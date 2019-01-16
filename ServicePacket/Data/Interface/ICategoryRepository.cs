@@ -7,6 +7,7 @@ namespace ServicePacket.Data.Interface
     {
         IEnumerable<Category> FindWithParent(Func<Category, bool> predicate);
         IEnumerable<Category> GetAllWithServices();
+        
         Category GetWithServices(int id);
     }
 }

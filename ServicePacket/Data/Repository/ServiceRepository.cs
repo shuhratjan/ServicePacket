@@ -16,9 +16,8 @@ namespace ServicePacket.Data.Repository
         public IEnumerable<Service> FindWithCategory(Func<Service, bool> predicate)
         {
             return _context.Services.Include(c => c.Category).Where(predicate);
-        }
-        
-        public IEnumerable<Service> GetAllWithCategory()
+        } 
+        public IEnumerable<Service> GetAllServices()
         {
             return _context.Services.Include(c => c.Category);
         }
