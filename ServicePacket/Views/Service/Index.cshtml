@@ -9,15 +9,61 @@
         <div class="col-md-8 mainBlock">
             <h2>Индивидуальный Пакет</h2>
             <h5>Cоберите свой пакет услуг</h5>
-            <div class="container">
-                
+            <div class="block">
+                <h4>На какой срок</h4>
+                <div class="containerBlock">
+                    <div class="serviceBox" data-perion-id="1"><p>1 месяц</p><span>без скидки</span></div>
+                    <div class="serviceBox" data-perion-id="2"><p>12 месяц</p><span>15% скидки</span></div>
+                </div>
             </div>
+            <hr />
+            @foreach (var item in Model.Where(c => !c.ParentID.HasValue))
+            {
+                var subCategories = Model.Where(m => m.ParentID.HasValue && m.ParentID == item.CategoryID).ToList();
+                <div class="block">
+                    @if (item.Code != "6")
+                    {
+                        <h4>@item.Name</h4><br />
+                    }
+
+                    @if (subCategories.Any())
+                    {
+                        foreach (var subCategory in subCategories)
+                        {
+
+                            <div class="containerBlock">
+                                <p style="text-align:right; margin:5px; font-size:small;">@subCategory.Name</p>
+                                @foreach (var service in subCategory.Services)
+                                {
+                                    <div class="serviceBox" data-id="@service.ServiceID">@service.Name</div>
+                                }
+                            </div><br />
+                        }
+                    }
+                    else
+                    {
+                        <div class="containerBlock">
+                            @foreach (var service in item.Services)
+                            {
+                                <div class="serviceBox" data-id="@service.ServiceID">@service.Name</div>
+                            }
+                        </div>
+
+                    }
+                </div>
+
+
+            }
         </div>
         <div class="col-md-4 mainBlock receiptBlock">
             <h1>ВАШ ПАКЕТ</h1>
-            <div class="col-md-2 serviceBox">Lorem ipsum Lorem ipsum Lorem ipsum</div>
+            <h4>Содержание</h4>
+            <div class="list-services">
+                <div class="item">
+                    <p>Name </p><span> Price</span>
+                </div>
+            </div>
         </div>
-
     </div>
 </div>
 

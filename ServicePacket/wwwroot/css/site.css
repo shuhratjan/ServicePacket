@@ -40,14 +40,24 @@
     /*border: 1px solid gray;
     box-shadow: 1px 2px 9px #888888;*/
 }
+
 .serviceBox {
-    width: 145px;
+    width: 134px;
     margin: 2px;
-    text-align: center;
     border: 1px solid gray;
-    padding-top: 1px;
-    padding-bottom: 1px;
+    overflow-wrap: break-word;
 }
+    .serviceBox:hover {
+        cursor: pointer;
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        transition: 0.1s ease;
+    }
+.serviceBox:active {
+    background-color:darkblue;
+}
+
 .mainBlock {
     margin: 6px;
     border: 1px solid gray;
@@ -58,3 +68,26 @@
     width: 31.5%;
     float: right;
 }
+.containerBlock {
+    display: grid;
+    /*grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));*/
+    grid-template-columns: repeat(5, 140px);
+}
+.containerBlock > div {
+   padding: .5em;
+   text-align:center;
+}
+.block{
+    margin-top: 40px;
+}
+h4 {
+    color:#ababab;
+}
+.item {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.item>span{
+    text-align:right;
+}
+
