@@ -98,3 +98,50 @@ h4 {
 #period{
     margin-top:15px;
 }
+label {
+    margin: 15px 30px 0px 30px;
+}
+#totalPrice {
+    border: 1px solid;
+    text-align: center;
+    margin: 10px 0px;
+    font-size: 24px;
+}
+
+    #totalPrice > p {
+        margin-top: -20px;
+    }
+        #totalPrice > p > span {
+            background-color: white;
+            padding: 6px;
+        }
+
+label.agreement {
+    margin: 0px 30px 12px 30px;
+}
+.submitBtn {
+    text-align:center;
+}
+.myButton {
+    box-shadow: 1px 2px 9px #888888;
+    background-color: #e2cc3a;
+    border: 1px solid #337bc4;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 8px 45px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #528ecc;
+    margin-bottom: -12px;
+}
+
+    .myButton:hover {
+        background-color: #e5d637;
+    }
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+}

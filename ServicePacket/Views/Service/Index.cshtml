@@ -52,8 +52,6 @@
                     }
                 </div>
                 <hr />
-
-
             }
         </div>
         <div class="col-md-4 mainBlock receiptBlock">
@@ -70,9 +68,28 @@
                     <p >Cрок услуги</p><span>1 месяц</span>
                 </div>
             </div>
+            <div id="totalPrice">
+                <p><span>Итоговая сумма</span></p>
+                <span id="price">0тг</span>
+            </div>
+            <div class="paymentWay">
+                <label for="payment">
+                    Выберите способ оплаты
+                    <select id="payment">
+                        <option value="1">Опласа с помощью ePay(VISA,MasterCard)</option>
+                        <option value="2">Опласа с помощью QIWI</option>
+                    </select>
+
+                    <hr />
+                </label>
+                <label for="agreement" class="agreement">
+                    <input id="agreement" type="checkbox" name="agreementCheck"  value="agreement"/> Я принимаю условия договора
+                </label>
+            </div>
+            <div class="submitBtn">
+                <input id="myButton" type="submit" class="myButton" value="Перейти к оплате" />
+            </div>
+                
         </div>
     </div>
 </div>
-
-
-
