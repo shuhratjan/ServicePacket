@@ -47,7 +47,9 @@ $(document).ready(function () {
                 totalPrice = totalPrice - totalPrice * 12 / 100;
             }
             $("#totalPrice span#price").text(totalPrice + "тг");
-        }
+        } else {
+            $("#totalPrice span#price").text("0тг");
+}
         
     });
 
