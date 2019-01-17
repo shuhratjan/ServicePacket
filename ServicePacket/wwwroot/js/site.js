@@ -1,6 +1,40 @@
 ﻿// Write your JavaScript code.
 $(document).ready(function () {
+    var totalPrice = 0;
     $(".serviceBox").click(function () {
-        alert($(this).attr("data-id"));
+        if ($(this).attr("data-type")==="item") {
+            if ($(this).hasClass("checked")) {
+                $(this).removeClass("checked");
+                $("div#receiptList div.item[data-id='" + $(this).attr("data-id") + "']").remove();
+            }
+            else {
+                content = "<div class='item' data-id='" + $(this).attr("data-id") + "'><p>" + $(this).html() + "</p > <span> " + $(this).attr("data-price") + "</span></div>";
+                $("#receiptList").append(content);
+                $(this).addClass("checked");
+            }
+        } else {
+            if ($(this).hasClass("checked")) {
+                $(this).removeClass("checked");
+                if ($(this).attr("data-period-id") === "2"){
+                    $("div#period div.item").attr("data-period-id", "1");
+                    $("div#period div.item span").html("1 месяц");
+                }
+            }
+            else {
+                if ($(this).attr("data-period-id") === "2") {
+                    $(".block .serviceBox[data-period-id='1']").removeClass("checked");
+                    $("div#period div.item span").html("12 месяц");
+                } else {
+                    $(".block .serviceBox[data-period-id='2']").removeClass("checked");
+                    $("div#period div.item span").html("1 месяц");
+                }
+                $("div#period div.item").attr("data-period-id", $(this).attr("data-period-id"));
+                $(this).addClass("checked");
+            }
+        }
+
+
+        
+        
     });
 });

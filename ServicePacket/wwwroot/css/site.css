@@ -54,8 +54,13 @@
         transform: scale(1.1);
         transition: 0.1s ease;
     }
-.serviceBox:active {
-    background-color:darkblue;
+    .serviceBox:active {
+        background: #2237a2;
+        color: azure;
+    }
+.checked {
+    background: #2237a2;
+    color: azure;
 }
 
 .mainBlock {
@@ -90,4 +95,6 @@ h4 {
 .item>span{
     text-align:right;
 }
-
+#period{
+    margin-top:15px;
+}

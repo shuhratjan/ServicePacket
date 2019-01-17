@@ -12,8 +12,8 @@
             <div class="block">
                 <h4>На какой срок</h4>
                 <div class="containerBlock">
-                    <div class="serviceBox" data-perion-id="1"><p>1 месяц</p><span>без скидки</span></div>
-                    <div class="serviceBox" data-perion-id="2"><p>12 месяц</p><span>15% скидки</span></div>
+                    <div class="serviceBox" data-period-id="1" data-type="period"><p>1 месяц</p><span>без скидки</span></div>
+                    <div class="serviceBox" data-period-id="2" data-type="period"><p>12 месяц</p><span>15% скидки</span></div>
                 </div>
             </div>
             <hr />
@@ -23,7 +23,7 @@
                 <div class="block">
                     @if (item.Code != "6")
                     {
-                        <h4>@item.Name</h4><br />
+                        <h4>@item.Name</h4>
                     }
 
                     @if (subCategories.Any())
@@ -35,7 +35,7 @@
                                 <p style="text-align:right; margin:5px; font-size:small;">@subCategory.Name</p>
                                 @foreach (var service in subCategory.Services)
                                 {
-                                    <div class="serviceBox" data-id="@service.ServiceID">@service.Name</div>
+                                    <div class="serviceBox" data-id="@service.ServiceID" data-price="@service.Price" data-type="item">@service.Name</div>
                                 }
                             </div><br />
                         }
@@ -45,12 +45,13 @@
                         <div class="containerBlock">
                             @foreach (var service in item.Services)
                             {
-                                <div class="serviceBox" data-id="@service.ServiceID">@service.Name</div>
+                                <div class="serviceBox" data-id="@service.ServiceID" data-price="@service.Price" data-type="item">@service.Name</div>
                             }
                         </div>
 
                     }
                 </div>
+                <hr />
 
 
             }
@@ -58,9 +59,15 @@
         <div class="col-md-4 mainBlock receiptBlock">
             <h1>ВАШ ПАКЕТ</h1>
             <h4>Содержание</h4>
-            <div class="list-services">
+            <div id="receiptList" class="list-services">
                 <div class="item">
                     <p>Name </p><span> Price</span>
+                </div>
+            </div>
+            <hr />
+            <div id="period">
+                <div class="item" data-period-id="1">
+                    <p >Cрок услуги</p><span>1 месяц</span>
                 </div>
             </div>
         </div>
