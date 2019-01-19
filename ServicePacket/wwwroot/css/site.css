@@ -1,6 +1,6 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 /* Wrapping element */
@@ -64,6 +64,7 @@
 }
 
 .mainBlock {
+    background-color:white;
     margin: 6px;
     border: 1px solid gray;
     box-shadow: 1px 2px 9px #888888;
@@ -124,7 +125,7 @@ label.agreement {
 }
 .myButton {
     box-shadow: 1px 2px 9px #888888;
-    background-color: #e2cc3a;
+    background-color: #ffbd4a;
     border: 1px solid #337bc4;
     display: inline-block;
     cursor: pointer;
@@ -138,7 +139,7 @@ label.agreement {
 }
 
     .myButton:hover {
-        background-color: #e5d637;
+        background-color: #f3a825;
     }
 
 .myButton:active {

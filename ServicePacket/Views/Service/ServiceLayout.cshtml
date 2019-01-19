@@ -7,6 +7,7 @@
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/common.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
@@ -17,33 +18,198 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">ServicePacket</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-                @await Html.PartialAsync("_LoginPartial")
+    <div class="text-center" style="background-color: #000d41;">
+        <a role="button" data-toggle="modal" data-target="#bannerModal" class="imagebanner hidden-xs">
+            <img src="~/images/banner.png">
+        </a>
+    </div>
+    <div class="topbar">
+        <div class="container CartEndAnimate main-header-container" style="background-color: #216ece;padding-top:5px;">
+            <div class="row">
+                <div class="col-md-2 col-sm-8 col-xs-6">
+                    <a class="navbar-brand" href="https://kazcontract.kz/" style="margin-left: -5px; margin-top: 18px; color: #ffffff; margin-bottom: 10px;">
+                    <img src="~/images/while_logo_without_text.png" alt="Логотип" style="height: 26px;margin: -5px 5px 0 0;display:inline;"> <b>KazContract</b></a>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="hidden-lg hidden-md col-sm-4 col-xs-6 lg hidden-sm">
+                    <div style="height: 20px;"><a href="tel:87272497777" class="m-l-10 font-13 top-phone pull-right" style="color:#fff;"><span class="glyphicon glyphicon-earphone"></span> 8 (727) 249 7777</a></div>
+                    <div style="height: 20px;"><a href="tel:87780969125" class="m-l-10 font-13 top-phone pull-right" style="color:#fff;"><span class="glyphicon glyphicon-earphone"></span> 8 (778) 096 9125</a></div>
+                    <a style="padding-left: 5px; color: white !important; white-space: nowrap; overflow: hidden; padding: 5px; text-overflow: ellipsis; line-height: 28px; font-size:12px;" href="https://kazcontract.kz/auth/login" class="waves-effect font-13 pull-right"> <span class="hidden-sm"><b>Вход</b></span></a>
+                    <a style="padding-left: 5px; color: white !important; white-space: nowrap; overflow: hidden; padding: 5px; text-overflow: ellipsis; padding-right: 10px; line-height: 28px; font-size:12px;padding-right:0px !important;" href="https://kazcontract.kz/auth/register" class="waves-effect font-13 pull-right"> <span class="hidden-sm"><b>Регистрация</b></span></a>
+                </div>
+                <div class="hidden-lg hidden-md col-sm-4 lg hidden-xs">
+                    <div style="margin-right: 25px; margin-top: 10px; margin-left: 20px; " class="pull-right"><a href="tel:87272497777" class="m-l-10 font-13 top-phone" style="color:#fff;"><span class="glyphicon glyphicon-earphone"></span> 8 (727) 249 7777</a></div>
+                    <div style="margin-right: 25px;" class="pull-right"><a href="tel:87780969125" class="m-l-10 font-13 top-phone" style="color:#fff;"><span class="glyphicon glyphicon-earphone"></span> 8 (778) 096 9125</a></div>
+                    <div class="pull-right" style="max-width: 80%;">
+                        <ul class="nav navbar-nav navbar-right" style="max-width: 100%;">
+                            <li><a style="padding-left: 5px; color: white !important; white-space: nowrap; overflow: hidden; padding: 5px; text-overflow: ellipsis; padding-right: 5px; line-height: 28px;" href="https://kazcontract.kz/auth/login" class="waves-effect font-13"> <span class="hidden-sm"><b>Вход</b></span></a></li>
+                            <li><a style="padding-left: 5px; color: white !important; white-space: nowrap; overflow: hidden; padding: 5px; text-overflow: ellipsis; padding-right: 5px; line-height: 28px;" href="https://kazcontract.kz/auth/register" class="waves-effect font-13"> <span class="hidden-sm"><b>Регистрация</b></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="hidden-lg hidden-md clearfix"></div>
+                <div class="col-md-8 " style="padding-top: 11px;">
+                    <form method="get" action="https://kazcontract.kz/tenders">
+                        <div class="input-group">
+                            <input type="text" id="example-input2-group2" name="q" class="form-control govnojop" placeholder="Наберите необходимое слово или словосочетание (Например: строительство, ремонт дорог, монтажные работы)">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn waves-effect waves-light btn-warning" style="background: #216ece !important; border: 1px solid !important; padding: 8px 11px 8px 11px;"><i class="glyphicon glyphicon-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                    <div class="container">
+                        <div class="row main-top-menu">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed m-r-0" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="border-color: white; margin-right: -5px !important;">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar" style="background-color: #fff;height: 2px;margin-top: 1px;margin-bottom: 5px;"></span>
+                                    <span class="icon-bar" style="background-color: #fff;"></span>
+                                    <span class="icon-bar" style="background-color: #fff;margin-top: 5px;"></span>
+                                </button>
+                            </div>
+                            <div class="collapse navbar-collapse hedernav" id="bs-example-navbar-collapse-1" style="margin: 5px auto 0px auto; padding: 0;">
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown">
+                                        <a href="https://kazcontract.kz/#" style="line-height: 30px; color: white !important;" class="dropdown-toggle waves-effect" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">О нас <span class="caret"></span></a>
+                                        <ul class="dropdown-menu dropdown-menu-animate">
+                                            <li><a href="https://kazcontract.kz/about">О компании</a></li>
+                                            <li><a href="https://kazcontract.kz/reviews">Отзывы</a></li>
+
+                                            <li class="header" style="margin-left: 20px; margin-bottom: -8px;">СМИ о нас</li>
+                                            <li class="divider"></li>
+                                            <li><a href="https://kazcontract.kz/interview-atameken-business-channel">Atameken Business Channel</a></li>
+                                            <li><a href="https://kazcontract.kz/interview-radiotochka">Радиоточка</a></li>
+                                            <li class="header" style="margin-left: 20px; margin-bottom: -8px;">Полезная информация </li>
+                                            <li class="divider"></li>
+                                            <li><a href="https://kazcontract.kz/inquiries/kazcontract">Закупки на KazContract</a></li>
+                                            <li><a href="https://kazcontract.kz/inquiries/goszakup"><span>Государственные закупки</span></a></li>
+                                            <li><a href="https://kazcontract.kz/inquiries/samruk"><span>Самрук-Казына</span></a></li>
+                                            <li><a href="https://kazcontract.kz/inquiries/reestr"><span>Реестр недропользователей</span></a></li>
+                                            <li><a href="https://kazcontract.kz/articles">Статьи</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="https://kazcontract.kz/tenders" style="line-height: 30px; color: white !important;" class="waves-effect ">Тендеры</a></li>
+                                    <li class="hidden-md hidden-sm"><a href="https://kazcontract.kz/tenders/kazcontract" style="font-weight: bold; color: #ffbd4a !important; font-size: 14px !important; line-height: 30px;" class="waves-effect ">Закупки KazContract</a></li>
+                                    <li class=""><a href="https://kazcontract.kz/itogi/index" style="line-height: 30px; color: white !important;" class="waves-effect ">Итоги тендеров</a></li>
+                                    <li class="hidden-md hidden-sm"><a href="https://kazcontract.kz/customer/tendercreate" style="line-height: 30px; color: white !important;" class="waves-effect ">Разместить тендер</a></li>
+
+                                    <li class="dropdown">
+                                        <a href="https://kazcontract.kz/#" style="line-height: 30px; color: white !important; border: 1px solid; border-bottom: none;" class="dropdown-toggle waves-effect " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Тарифы услуг<span class="caret"></span></a>
+                                        <ul class="dropdown-menu dropdown-menu-animate" role="menu">
+
+                                            <li><a href="https://kazcontract.kz/services/pko"><span>ПКО Самрук-Казына</span></a></li>
+                                            <li><a href="https://kazcontract.kz/services/result30"><span>Пакет: Result 3.0</span></a></li>
+
+                                            <li><a href="https://kazcontract.kz/services/fastStart"><span>Пакет услуг «Быстрый старт»</span></a></li>
+
+
+                                            <li><a href="https://kazcontract.kz/guide/mainPage"><span>Тренажер по участию в тендерах</span></a></li>
+                                            <li><a href="https://kazcontract.kz/services/newclients">Онлайн поиск выигравших цен</a></li>
+                                            <li><a href="https://kazcontract.kz/services/onlinepoisk">Онлайн поиск тендеров</a></li>
+                                            <li><a href="https://kazcontract.kz/services/tenders-mailing">Рассылка тендеров</a></li>
+                                            <li><a href="https://kazcontract.kz/services/itogi-protocols"><span>Рассылка протоколов итогов по тендерам</span></a></li>
+                                            <li><a href="https://kazcontract.kz/services/etp"><span>Электронно-торговая площадка</span></a></li>
+
+                                            <li><a href="https://kazcontract.kz/services/audit-of-documentation"><span>Аудит конкурсной документации</span></a></li>
+                                            <li><a href="https://kazcontract.kz/services/legal-consultation"><span>Юридическая консультация по тендерам</span></a></li>
+                                            <li><a href="https://kazcontract.kz/services/registration-on-portals"><span>Регистрация на порталах</span></a></li>
+                                            <li><a href="https://kazcontract.kz/services/competitive-application-upload"><span>Загрузка конкурсной заявки на портал</span></a></li>
+                                            <li><a href="https://kazcontract.kz/trainings/video"><span>Видео обучение по тендерам</span></a></li>
+
+                                            <li><a href="https://kazcontract.kz/services/price-analytics"><span>Анализ рынка по вашей сфере</span></a></li>
+                                            <li><a href="https://kazcontract.kz/services/kazcontractcall"><span>Онлайн консультант</span></a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="hidden-sm"><a href="https://kazcontract.kz/contacts" style="line-height: 30px; color: white !important;" class="waves-effect ">Контакты</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-md-2 hidden-sm hidden-xs">
+                    <a href="tel:87272497777" class="m-l-10 font-6 top-phone" style="padding-left : 20px; float:right;color:#fff; font-size:12px !important"><span class="md md-call"></span> 8 (727) 249 7777</a>
+                    <a href="tel:87780969125" class="m-l-10 font-6 top-phone" style="padding-left : 20px; float:right;color:#fff; font-size:12px !important"><span class="md md-call "></span> 8 (778) 096 9125</a>
+                    <a style="margin-top: 11px; padding-left: 5px; color: white !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 5px 20px; line-height: 28px; font-size: 11px !important; background-color:#ffbd4a; border-radius: 5px; padding-left : 20px; float:right;" href="https://kazcontract.kz/auth/register" class="waves-effect font-13"> <span class="hidden-sm"><b>ПОПРОБОВАТЬ БЕСПЛАТНО</b></span></a><br>
+                    <div class="text-center"><a style="margin-top: 6px; padding-left: 5px; color: white !important; white-space: nowrap; overflow: hidden; padding: 5px; text-overflow: ellipsis; padding-right: 5px; line-height: 30px; font-size: 13px !important; text-transform:uppercase; padding-left : 20px; float:right;" href="https://kazcontract.kz/auth/login?returnurl=https%3a%2f%2fkazcontract.kz%2f" rel="nofollow" class="waves-effect font-13"> <span class="hidden-sm"><b>Вход</b></span></a></div>
+                    <div class="pull-right" style="max-width: 80%;">
+                        <ul class="nav navbar-nav navbar-right" style="max-width: 100%;"></ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
     <div class="body-content-service">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; 2019 - ServicePacket</p>
+
+        <footer style="border-top: 1px solid rgba(0, 0, 0, 0.1);bottom: 0px;color: #58666e;text-align: left !important;padding: 20px 10px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <b>О проекте</b>
+                        <p class="font-13">
+                            KazContract.kz - полная база госзакупок и тендеров Казахстана. Портал по поиску и предоставлении информации о тендерах, разработанный в декабре 2014 года. Услуги по сопровождению при участии в тендерах и аукционах, подготовка документации.
+                        </p>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <b>Навигация</b>
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-6">
+                                <ul class="list-unstyled font-13">
+                                    <li>
+                                        <a href="https://kazcontract.kz/about">О проекте</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://kazcontract.kz/tenders/">Тендеры</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://kazcontract.kz/articles">Статьи</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://kazcontract.kz/contacts">Контакты</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6 col-xs-6">
+                                <ul class="list-unstyled font-13">
+                                    <li>
+                                        <a href="https://kazcontract.kz/services">Услуги</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://kazcontract.kz/trainings/video">Обучение</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="https://kazcontract.kz/reviews">Отзывы</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <b>Контакты</b>
+                        <p class="font-13">
+                            Адрес: <b>г.Алматы, ул.Байзакова 280, МК «Almaty Towers», Северная Башня, 18 этаж</b>
+                            <br>
+                            Телефоны: <a href="tel:87272497777"><b>8 (727) 249 7777</b></a>, <a href="tel:87780969125"><b>8 (778) 096 9125</b></a>
+                            <br>
+                            Email: <a href="mailto:info@kazcontract.kz"><b>info@kazcontract.kz</b></a>
+                        </p>
+                        <div>
+                            <a href="https://www.facebook.com/kazcontract" class="btn btn-facebook waves-effect waves-light" target="_blank" rel="nofollow"><i class="fab fa-facebook-square"></i></a>
+                            <a href="http://vk.com/kazcontract" class="btn btn-instagram waves-effect waves-light" target="_blank" rel="nofollow"><i class="fa fa-vk"></i></a>
+                            <a href="https://instagram.com/kazcontract.kz" class="btn btn-instagram waves-effect waves-light" target="_blank" rel="nofollow" style="background-color:#8D6444 !important;"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/channel/UCNYSKQJpvqSr7iECi-e-qRw" class="btn btn-youtube waves-effect waves-light" target="_blank" rel="nofollow"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
+
     </div>
 
     <environment include="Development">
